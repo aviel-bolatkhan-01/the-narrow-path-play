@@ -1,0 +1,1 @@
+{"fw": 128, "fh": 160, "feet": [60, 154], "height": 132, "rows": ["idle", "attack", "cast", "block", "hit", "buff", "death", "victory"], "frames": {"idle": 4, "attack": 5, "cast": 4, "block": 3, "hit": 3, "buff": 4, "death": 5, "victory": 2}, "fps": {"idle": 5, "victory": 4}}

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs>
+<filter id="np_paint" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+  <feOffset in="SourceAlpha" dx="-18" dy="-20" result="offDR"/>
+  <feComposite in="SourceAlpha" in2="offDR" operator="out" result="bandDR"/>
+  <feGaussianBlur in="bandDR" stdDeviation="8" result="bandDRb"/>
+  <feComposite in="bandDRb" in2="SourceAlpha" operator="in" result="shadeMask"/>
+  <feFlood flood-color="#2a1030" flood-opacity="0.5" result="shadeCol"/>
+  <feComposite in="shadeCol" in2="shadeMask" operator="in" result="shade"/>
+  <feOffset in="SourceAlpha" dx="7" dy="9" result="offUL"/>
+  <feComposite in="SourceAlpha" in2="offUL" operator="out" result="bandUL"/>
+  <feGaussianBlur in="bandUL" stdDeviation="3" result="bandULb"/>
+  <feComposite in="bandULb" in2="SourceAlpha" operator="in" result="rimMask"/>
+  <feFlood flood-color="#fff1cf" flood-opacity="0.55" result="rimCol"/>
+  <feComposite in="rimCol" in2="rimMask" operator="in" result="rim"/>
+  <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="soft"/>
+  <feSpecularLighting in="soft" surfaceScale="5" specularConstant="0.75" specularExponent="22" lighting-color="#fff6e0" result="spec">
+    <fePointLight x="-400" y="-600" z="520"/>
+  </feSpecularLighting>
+  <feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
+  <feColorMatrix in="specIn" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.45 0" result="sheen"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="7" result="noise"/>
+  <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.12  0 0 0 0.22 -0.06" result="grainCol"/>
+  <feComposite in="grainCol" in2="SourceAlpha" operator="in" result="grain"/>
+  <feMerge>
+    <feMergeNode in="SourceGraphic"/>
+    <feMergeNode in="shade"/>
+    <feMergeNode in="grain"/>
+    <feMergeNode in="sheen"/>
+    <feMergeNode in="rim"/>
+  </feMerge>
+</filter>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe082"/>
+      <stop offset="1" stop-color="#c08a1e"/>
+    </linearGradient>
+    <linearGradient id="robe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5a3a1e"/>
+      <stop offset="1" stop-color="#2e1c0e"/>
+    </linearGradient>
+    <radialGradient id="glint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd84a" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffd84a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="shadow" data-pivot="300 862"><ellipse cx="300" cy="862" rx="160" ry="22" fill="#0b0710" opacity="0.45"/></g>
+  <g id="fx" data-pivot="300 560"><ellipse cx="300" cy="560" rx="220" ry="280" fill="url(#glint)"/></g>
+  <g id="torso" data-pivot="300 850"><g filter="url(#np_paint)">
+    <path d="M236 400 C262 368 338 368 364 400 C396 520 410 680 418 846 C370 858 334 844 300 854 C266 844 230 858 182 846 C190 680 204 520 236 400 Z" fill="url(#robe)" stroke="#1b1020" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="236" cy="800" r="16" fill="url(#gold)" stroke="#1b1020" stroke-width="5"/>
+    <circle cx="270" cy="826" r="14" fill="url(#gold)" stroke="#1b1020" stroke-width="5"/>
+    <circle cx="336" cy="820" r="16" fill="url(#gold)" stroke="#1b1020" stroke-width="5"/>
+    <circle cx="370" cy="790" r="13" fill="url(#gold)" stroke="#1b1020" stroke-width="5"/>
+    <circle cx="304" cy="790" r="12" fill="url(#gold)" stroke="#1b1020" stroke-width="5"/>
+    <path d="M250 470 C280 500 320 500 350 470 M240 560 C280 594 324 594 360 560 M232 650 C278 690 326 690 370 650" fill="none" stroke="#1b1020" stroke-width="12" stroke-linecap="round" stroke-dasharray="16 6"/>
+    <path d="M250 470 C280 500 320 500 350 470 M240 560 C280 594 324 594 360 560 M232 650 C278 690 326 690 370 650" fill="none" stroke="#9aa0ac" stroke-width="6" stroke-linecap="round" stroke-dasharray="16 6"/>
+    <path d="M352 420 C380 540 394 680 402 846 L418 846 C408 680 392 520 362 404 Z" fill="#1a0f06" opacity="0.6"/>
+  
+    <path d="M229 476 C213 564 274 647 295 740" fill="none" stroke="#1b1020" stroke-width="8" stroke-linecap="round" opacity="0.30"/><path d="M326 495 C359 584 373 667 357 755" fill="none" stroke="#1b1020" stroke-width="8" stroke-linecap="round" opacity="0.26"/><path d="M267 520 C288 598 307 677 326 765" fill="none" stroke="#1b1020" stroke-width="18" stroke-linecap="round" opacity="0.14"/><path d="M210 804 C274 848 331 834 390 794" fill="none" stroke="#1b1020" stroke-width="10" stroke-linecap="round" opacity="0.24"/>
+  </g></g>
+  <g id="arm_back" data-pivot="356 420" data-parent="torso"><g filter="url(#np_paint)">
+    <path d="M352 410 C384 460 404 520 412 580 L376 588 C370 534 358 484 336 440 Z" fill="url(#robe)" stroke="#1b1020" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M370 590 C350 610 352 650 380 664 C410 676 438 654 436 624 C434 600 416 588 396 586 Z" fill="#7a4a24" stroke="#1b1020" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M378 590 C384 578 400 576 408 588" fill="none" stroke="#1b1020" stroke-width="5"/>
+    <circle cx="394" cy="582" r="9" fill="url(#gold)" stroke="#1b1020" stroke-width="4"/>
+  </g></g>
+  <g id="head" data-pivot="300 400" data-parent="torso"><g filter="url(#np_paint)">
+    <path d="M226 390 C206 310 236 220 300 206 C364 220 394 310 374 390 C350 416 250 416 226 390 Z" fill="url(#robe)" stroke="#1b1020" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M252 382 C240 326 262 270 300 262 C338 270 360 326 348 382 C328 398 272 398 252 382 Z" fill="#0a0604"/>
+    <circle cx="282" cy="320" r="11" fill="url(#gold)" stroke="#1b1020" stroke-width="4"/>
+    <circle cx="320" cy="320" r="11" fill="url(#gold)" stroke="#1b1020" stroke-width="4"/>
+    <path d="M286 316 L278 324 M324 316 L316 324" stroke="#8a5a14" stroke-width="3"/>
+    <path d="M276 356 C290 366 312 366 326 356" fill="none" stroke="#c08a1e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M232 240 C252 216 280 206 300 206" fill="none" stroke="#7a5a32" stroke-width="5" stroke-linecap="round"/>
+  </g></g>  <g id="acc_sway" data-pivot="300 403" data-parent="head"><g filter="url(#np_paint)"><path d="M300 403 C294 421 306 437 300 455" fill="none" stroke="#1b1020" stroke-width="5" stroke-linecap="round"/><circle cx="300" cy="467" r="11" fill="#4a3670" stroke="#1b1020" stroke-width="5"/><circle cx="297" cy="464" r="4" fill="#9a7fd0" opacity="0.9"/></g></g>
+
+  <g id="arm_front" data-pivot="244 420" data-parent="torso"><g filter="url(#np_paint)">
+    <path d="M250 410 C218 430 196 452 180 476 L206 500 C222 478 244 456 270 440 Z" fill="url(#robe)" stroke="#1b1020" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="186" cy="490" r="18" fill="#3a2a1a" stroke="#1b1020" stroke-width="6"/>
+  </g></g>
+  <g id="prop" data-pivot="186 490" data-parent="arm_front"><g filter="url(#np_paint)">
+    <path d="M186 490 L186 330" stroke="#1b1020" stroke-width="12" stroke-linecap="round"/>
+    <path d="M186 490 L186 330" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M120 344 L252 324" stroke="#1b1020" stroke-width="12" stroke-linecap="round"/>
+    <path d="M120 344 L252 324" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M120 344 L100 410 M120 344 L140 410 M252 324 L232 384 M252 324 L272 384" stroke="#1b1020" stroke-width="3"/>
+    <path d="M94 410 C96 432 144 432 146 410 Z" fill="url(#gold)" stroke="#1b1020" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M226 384 C228 406 276 406 278 384 Z" fill="url(#gold)" stroke="#1b1020" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="120" cy="400" r="9" fill="url(#gold)" stroke="#1b1020" stroke-width="3"/>
+    <circle cx="110" cy="404" r="7" fill="url(#gold)" stroke="#1b1020" stroke-width="3"/>
+  </g></g>
+</svg>

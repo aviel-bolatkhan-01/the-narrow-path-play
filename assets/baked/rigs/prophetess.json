@@ -1,0 +1,294 @@
+{
+  "idle": 1.0,
+  "atlas": [
+    1991,
+    3162
+  ],
+  "bones": [
+    {
+      "name": "shadow",
+      "parent": null,
+      "pivot": [
+        300.0,
+        862.0
+      ],
+      "offset": [
+        126.0,
+        834.0
+      ],
+      "rect": [
+        0,
+        3050,
+        696,
+        112
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "fx",
+      "parent": null,
+      "pivot": [
+        300.0,
+        520.0
+      ],
+      "offset": [
+        56.0,
+        186.0
+      ],
+      "rect": [
+        483,
+        0,
+        976,
+        1336
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "cape_back",
+      "parent": "torso",
+      "pivot": [
+        292.0,
+        392.0
+      ],
+      "offset": [
+        89.1,
+        361.1
+      ],
+      "rect": [
+        619,
+        1552,
+        496,
+        1024
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "cloak_tail_sway",
+      "parent": "cape_back",
+      "pivot": [
+        188.0,
+        836.0
+      ],
+      "offset": [
+        102.13228,
+        825.1622
+      ],
+      "rect": [
+        716,
+        2607,
+        317,
+        141
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "prop_back",
+      "parent": "arm_back",
+      "pivot": [
+        214.0,
+        560.0
+      ],
+      "offset": [
+        85.4,
+        121.1
+      ],
+      "rect": [
+        0,
+        0,
+        483,
+        1552
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "arm_back",
+      "parent": "torso",
+      "pivot": [
+        252.0,
+        410.0
+      ],
+      "offset": [
+        184.2,
+        384.3
+      ],
+      "rect": [
+        0,
+        2607,
+        184,
+        443
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "leg_back",
+      "parent": "torso",
+      "pivot": [
+        268.0,
+        780.0
+      ],
+      "offset": [
+        228.7,
+        813.8
+      ],
+      "rect": [
+        1033,
+        2607,
+        162,
+        113
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "torso",
+      "parent": null,
+      "pivot": [
+        300.0,
+        780.0
+      ],
+      "offset": [
+        148.3,
+        352.4
+      ],
+      "rect": [
+        0,
+        1552,
+        619,
+        1055
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "leg_front",
+      "parent": "torso",
+      "pivot": [
+        330.0,
+        780.0
+      ],
+      "offset": [
+        306.1,
+        815.8
+      ],
+      "rect": [
+        1195,
+        2607,
+        188,
+        113
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "hair",
+      "parent": "head",
+      "pivot": [
+        268.0,
+        300.0
+      ],
+      "offset": [
+        183.3,
+        270.2
+      ],
+      "rect": [
+        1115,
+        1552,
+        223,
+        712
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "head",
+      "parent": "torso",
+      "pivot": [
+        302.0,
+        386.0
+      ],
+      "offset": [
+        220.8105,
+        160.8
+      ],
+      "rect": [
+        1658,
+        1552,
+        333,
+        509
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "hood_tassel_sway",
+      "parent": "head",
+      "pivot": [
+        252.0,
+        244.0
+      ],
+      "offset": [
+        223.93626,
+        226.0
+      ],
+      "rect": [
+        184,
+        2607,
+        96,
+        368
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "arm_front",
+      "parent": "torso",
+      "pivot": [
+        348.0,
+        412.0
+      ],
+      "offset": [
+        321.4,
+        334.3
+      ],
+      "rect": [
+        280,
+        2607,
+        307,
+        267
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "prop",
+      "parent": "arm_front",
+      "pivot": [
+        444.0,
+        364.0
+      ],
+      "offset": [
+        400.1,
+        235.75
+      ],
+      "rect": [
+        1338,
+        1552,
+        320,
+        687
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "timbrel_ribbon_sway",
+      "parent": "prop",
+      "pivot": [
+        480.0,
+        404.0
+      ],
+      "offset": [
+        417.78015,
+        387.15
+      ],
+      "rect": [
+        587,
+        2607,
+        129,
+        230
+      ],
+      "scale": 2.0
+    }
+  ]
+}

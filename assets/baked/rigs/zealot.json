@@ -1,0 +1,180 @@
+{
+  "idle": 1.0,
+  "atlas": [
+    1911,
+    904
+  ],
+  "bones": [
+    {
+      "name": "shadow",
+      "parent": null,
+      "pivot": [
+        300.0,
+        862.0
+      ],
+      "offset": [
+        126.0,
+        836.0
+      ],
+      "rect": [
+        236,
+        624,
+        696,
+        104
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "arm_back",
+      "parent": "torso",
+      "pivot": [
+        352.0,
+        470.0
+      ],
+      "offset": [
+        318.3,
+        449.5
+      ],
+      "rect": [
+        1229,
+        0,
+        443,
+        302
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "leg_back",
+      "parent": "torso",
+      "pivot": [
+        326.0,
+        680.0
+      ],
+      "offset": [
+        279.6,
+        658.5
+      ],
+      "rect": [
+        331,
+        0,
+        210,
+        434
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "torso",
+      "parent": null,
+      "pivot": [
+        300.0,
+        680.0
+      ],
+      "offset": [
+        217.85,
+        434.2
+      ],
+      "rect": [
+        0,
+        0,
+        331,
+        624
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "leg_front",
+      "parent": "torso",
+      "pivot": [
+        268.0,
+        680.0
+      ],
+      "offset": [
+        189.3,
+        658.5
+      ],
+      "rect": [
+        541,
+        0,
+        223,
+        434
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "head",
+      "parent": "torso",
+      "pivot": [
+        300.0,
+        470.0
+      ],
+      "offset": [
+        221.8,
+        323.4
+      ],
+      "rect": [
+        764,
+        0,
+        465,
+        307
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "acc_pauldron",
+      "parent": "arm_front",
+      "pivot": [
+        246.0,
+        480.0
+      ],
+      "offset": [
+        199.5,
+        446.2261
+      ],
+      "rect": [
+        932,
+        624,
+        170,
+        97
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "arm_front",
+      "parent": "torso",
+      "pivot": [
+        246.0,
+        480.0
+      ],
+      "offset": [
+        161.95,
+        459.75
+      ],
+      "rect": [
+        1672,
+        0,
+        239,
+        291
+      ],
+      "scale": 2.0
+    },
+    {
+      "name": "prop",
+      "parent": "arm_front",
+      "pivot": [
+        188.0,
+        578.0
+      ],
+      "offset": [
+        91.0,
+        460.0
+      ],
+      "rect": [
+        0,
+        624,
+        236,
+        280
+      ],
+      "scale": 2.0
+    }
+  ]
+}
