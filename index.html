@@ -96,6 +96,17 @@
 
 <script src="mq_js_bundle.js"></script>
 <script>
+  miniquad_add_plugin({
+    register_plugin: function (importObject) {
+      importObject.env.np_game_ready = function () {
+        document.title = "The Narrow Path";
+        window.__npReady = true;
+      };
+    },
+    name: "np_ready",
+    version: 1
+  });
+
   (function () {
     const loading = document.getElementById('loading');
     const view = document.getElementById('glcanvas');
@@ -113,7 +124,8 @@
       if (window.wasm_exports && wasmStartedAt === null) wasmStartedAt = performance.now();
       const now = performance.now();
       if (now - started >= 25000) hide();
-      else if (document.title === 'The Narrow Path' && wasmStartedAt !== null && now - wasmStartedAt >= 1500) hide();
+      else if (window.__npReady === true) hide();
+      else if (wasmStartedAt !== null && now - wasmStartedAt >= 6000) hide();
       else setTimeout(poll, 250);
     }
     load("narrow_path.wasm");
