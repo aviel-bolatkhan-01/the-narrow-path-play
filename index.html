@@ -102,6 +102,77 @@
         document.title = "The Narrow Path";
         window.__npReady = true;
       };
+
+      // The game's own storage: the browser has no filesystem, so the run,
+      // the profile and the settings live in the page's localStorage.
+      function npMemory() {
+        if (typeof wasm_memory !== "undefined" && wasm_memory) return wasm_memory;
+        if (window.wasm_exports && window.wasm_exports.memory) return window.wasm_exports.memory;
+        return null;
+      }
+
+      function npReadString(mem, ptr, len) {
+        if (!mem || len <= 0) return "";
+        return new TextDecoder("utf-8").decode(new Uint8Array(mem.buffer, ptr, len));
+      }
+
+      function npKey(key) {
+        return "narrowpath:" + key;
+      }
+
+      importObject.env.np_storage_set = function (keyPtr, keyLen, valPtr, valLen) {
+        try {
+          var mem = npMemory();
+          if (!mem) return;
+          var key = npReadString(mem, keyPtr, keyLen);
+          var val = npReadString(mem, valPtr, valLen);
+          window.localStorage.setItem(npKey(key), val);
+        } catch (e) {
+          console.error("np_storage_set failed", e);
+        }
+      };
+
+      importObject.env.np_storage_get_len = function (keyPtr, keyLen) {
+        try {
+          var mem = npMemory();
+          if (!mem) return -1;
+          var key = npReadString(mem, keyPtr, keyLen);
+          var val = window.localStorage.getItem(npKey(key));
+          if (val === null) return -1;
+          return new TextEncoder().encode(val).length;
+        } catch (e) {
+          console.error("np_storage_get_len failed", e);
+          return -1;
+        }
+      };
+
+      importObject.env.np_storage_get = function (keyPtr, keyLen, outPtr, outLen) {
+        try {
+          var mem = npMemory();
+          if (!mem) return 0;
+          var key = npReadString(mem, keyPtr, keyLen);
+          var val = window.localStorage.getItem(npKey(key));
+          if (val === null) return 0;
+          var bytes = new TextEncoder().encode(val);
+          var n = Math.min(bytes.length, outLen);
+          new Uint8Array(mem.buffer, outPtr, n).set(bytes.subarray(0, n));
+          return n;
+        } catch (e) {
+          console.error("np_storage_get failed", e);
+          return 0;
+        }
+      };
+
+      importObject.env.np_storage_remove = function (keyPtr, keyLen) {
+        try {
+          var mem = npMemory();
+          if (!mem) return;
+          var key = npReadString(mem, keyPtr, keyLen);
+          window.localStorage.removeItem(npKey(key));
+        } catch (e) {
+          console.error("np_storage_remove failed", e);
+        }
+      };
     },
     name: "np_ready",
     version: 1
